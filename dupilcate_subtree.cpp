@@ -3,7 +3,12 @@ class Solution {
   vector<Node*> ans;
     string solve(Node* root,map<string,int>& mp){
         if(root==nullptr) return "$";
-       
+       /*
+       if leaf node is not counted then add this 
+        if(root->left == nullptr and root->right == nullptr){
+          return to_string(root->data);
+        }
+       */
         
         
         string s = to_string(root->data) + solve(root->left,mp) + solve(root->right,mp);
